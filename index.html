@@ -14,9 +14,26 @@
 
 <body>
     <!-- Header: link to scoreboard, left -- timer countdown, right -->
+    <header class="clearfix">
+        <a href="scoreboard.html" class="brand float-left">View Highscores</a>
+        <div role="timer" class="float-right">Time: <span id="timeLeft">10</span> seconds</div>
+    </header>
     <!-- Body: The quiz itself -->
-    <!-- Body pt 2: a divider and correct/incorrect indication that disappear after a few seconds -->
+    <div class="container-lg">
+        <main class="col-8 mx-auto" id="quizBody">
+            <h3 id="questionText">What does JS stand for?</h3>
+            <button class="btn btn-info my-1" id="correct">JavaScript</button><br>
+            <button class="btn btn-info my-1" id="wrong1">JustScrappin</button><br>
+            <button class="btn btn-info my-1" id="wrong2">JamSugar</button><br>
+            <button class="btn btn-info my-1" id="wrong3">JamSpace</button>
+        </main>
+        <!-- Body pt 2: a divider and correct/incorrect indication that disappear after a few seconds -->
+        <aside class="col-8 mx-auto " id="quizResult">
+            <hr>
+            <p id="rezVal" class="text-muted font-italic">Wrong!</p>
+        </aside>
 
+    </div>
     <!-- Link game Javascript -->
     <script src="./Assets/script.js"></script>
     <!-- Link Bootstrap's jQuery, etc -->
