@@ -1,7 +1,20 @@
 /* can make it pretty this time!!!! */
-.quizbody {
-    background-color: bisque;
+.bgBody {
+    background-color: rgba(240, 240, 251, 0.787);
     border-color: teal;
     border-width: 2px;
     border-radius: 2px;
+}
+body {
+    background-image: url("fadedscales.png");
+    background-repeat: repeat;
+}
+
+a {
+    color: rgb(0, 97, 97);
+}
+
+a:hover {
+    color: rgb(0, 65, 65);
+    text-decoration: none;
 }

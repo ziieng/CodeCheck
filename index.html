@@ -13,26 +13,55 @@
 </head>
 
 <body>
-    <!-- Header: link to scoreboard, left -- timer countdown, right -->
-    <header class="clearfix">
-        <a href="scoreboard.html" class="brand float-left">View Highscores</a>
-        <div role="timer" class="float-right">Time: <span id="timeLeft">10</span> seconds</div>
-    </header>
-    <!-- Body: The quiz itself -->
     <div class="container-lg">
-        <main class="col-8 mx-auto" id="quizBody">
-            <h3 id="questionText">What does JS stand for?</h3>
-            <button class="btn btn-info my-1" id="correct">JavaScript</button><br>
-            <button class="btn btn-info my-1" id="wrong1">JustScrappin</button><br>
-            <button class="btn btn-info my-1" id="wrong2">JamSugar</button><br>
-            <button class="btn btn-info my-1" id="wrong3">JamSpace</button>
+        <!-- Header: link to scoreboard, left -- timer countdown, right -->
+        <header class="mx-auto clearfix bgBody rounded">
+            <a href="scoreboard.html" class="col-lg-3 float-left">View Highscores</a>
+            <div class="col-lg-6 align-middle float-left d-none d-lg-block">
+                <div class="progress my-1 d-none">
+                    <div class="progress-bar progress-bar-striped bg-info" role="progressbar" style="width:100%"
+                        aria-valuenow="75" aria-valuemin="0" aria-valuemax="75" id="timeProg"></div>
+                </div>
+            </div>
+            <div role="timer" class="col-lg-3 float-right text-right">Time: <span id="timeLeft">75</span> seconds</div>
+        </header>
+        <!-- Body: The quiz itself -->
+        <main class="col-8 p-3 my-3 mx-auto bgBody rounded" id="titlePage">
+            <h1 class="text-center">Code Review Quiz</h1>
+            <p class="text-center">Review your coding skills with this quiz, and answer as quickly as you can! But
+                beware, wrong answers will deduct time from your limit.</p>
+            <button class="d-block btn btn-info btn-lg mx-auto" id="startBtn">Start Quiz</button>
         </main>
-        <!-- Body pt 2: a divider and correct/incorrect indication that disappear after a few seconds -->
-        <aside class="col-8 mx-auto " id="quizResult">
-            <hr>
-            <p id="rezVal" class="text-muted font-italic">Wrong!</p>
-        </aside>
-
+        <article class="col-8 p-3 my-3 mx-auto d-none bgBody rounded" id="quizBody">
+            <h4 id="questionText">What does JS stand for?</h4>
+            <button class="btn btn-info my-1 px-3" id="aBtn">JavaScript</button><br>
+            <button class="btn btn-info my-1 px-3" id="bBtn">JustScrappin</button><br>
+            <button class="btn btn-info my-1 px-3" id="cBtn">JamSugar</button><br>
+            <button class="btn btn-info mt-1 px-3" id="dBtn">JamSpace</button>
+            <!-- Body pt 2: a divider and correct/incorrect indication that disappear after a few seconds -->
+            <aside class="font-weight-light d-none" id="quizResult">
+                <hr>
+                <p id="rezRight" class="text-warning font-italic d-none">Wrong!</p>
+                <p id="rezWrong" class="text-success font-italic d-none">Correct!</p>
+            </aside>
+        </article>
+        <article class="col-8 p-3 my-3 mx-auto d-none bgBody rounded" id="endForm">
+            <form>
+                <div class="form-group row">
+                    <label for="score" class="col-sm-3 col-form-label">Final Score</label>
+                    <div class="col-sm-5">
+                        <input type="text" readonly class="form-control-plaintext" id="score" value="">
+                    </div>
+                </div>
+                <div class="form-group row">
+                    <label for="inputName" class="col-sm-3 col-form-label">Initials</label>
+                    <div class="col-sm-5">
+                        <input type="text" class="form-control" maxlength="5" id="inputName">
+                    </div>
+                </div>
+                <button class="btn btn-info mt-1 px-3" id="sendName">Submit</button>
+            </form>
+        </article>
     </div>
     <!-- Link game Javascript -->
     <script src="./Assets/script.js"></script>
