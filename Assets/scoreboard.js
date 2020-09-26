@@ -15,7 +15,7 @@ if (localStorage.getItem('scoreBank') === null) {
 function printScores() {
     //Sort highest to lowest
     scoreList.sort(function (a, b) {
-        return a.score - b.score;
+        return b.score - a.score;
     })
     //Loop to print each on the page
     for (x of scoreList) {
