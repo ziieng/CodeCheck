@@ -13,8 +13,17 @@
 </head>
 
 <body>
+    <div class="container-lg">
     <!-- Body: display high scores from local storage -->
-
+    <main class="col-8 p-3 my-3 mx-auto bgBody text-center rounded" id="titlePage">
+        <h2>Leaderboard</h2>
+        <div id="scoreList"></div>
+        <nav class="col-12 mx-auto">
+            <button class="btn btn-info btn-sm" id="backBtn">Back to Quiz</button>
+            <button class="btn btn-info btn-sm" id="resetBtn">Reset Scores</button>
+        </nav>
+    </main>
+    </div>
     <!-- Link game Javascript -->
     <script src="./Assets/scoreboard.js"></script>
     <!-- Link Bootstrap's jQuery, etc -->
