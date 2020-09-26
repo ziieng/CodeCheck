@@ -5,7 +5,7 @@ const resetBtn = document.getElementById("resetBtn")
 let scoreList = []
 //Pull scores from storage, if they exist
 if (localStorage.getItem('scoreBank') === null) {
-    scoreArea.innerHTML = "<p>No scores saved, go make one!</p>"
+    scoreArea.innerHTML = "<p> </p>"
 } else {
     scoreList = JSON.parse(localStorage.getItem('scoreBank'))
     printScores()
@@ -36,5 +36,5 @@ backBtn.addEventListener("click", function () {
 function clearScores() {
     scoreList = ""
     localStorage.removeItem('scoreBank')
-    scoreArea.innerHTML = "<p>No scores saved, go make one!</p>"
+    scoreArea.innerHTML = "<p> </p>"
 }
