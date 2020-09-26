@@ -1,4 +1,4 @@
-//Declare locations, global variables
+//Declare locations, global variables (questions are at bottom of js)
 const stBtn = document.getElementById("startBtn")
 const titleCard = document.getElementById("titlePage")
 const qCard = document.getElementById("quizBody")
@@ -13,8 +13,14 @@ const inputName = document.getElementById("inputName")
 let qNum = 0
 let nScore = 5
 
+//Listeners
+stBtn.addEventListener("click", startQuiz);
+scoreSend.addEventListener("click", addScore);
+qCard.addEventListener("click", parseAnswer(event));
+
 //Start button: hide splash card, show question card, start timer
 function startQuiz() {
+    event.preventDefault()
     titleCard.classList.add("d-none")
     timeBar.parentElement.classList.remove("d-none")
     qCard.classList.remove("d-none")
@@ -22,6 +28,7 @@ function startQuiz() {
     quizCards()
 }
 
+//Function to start timer, holds interval for countdown
 function startClock() {
     let t = 75
     let tPercent = 100
@@ -37,10 +44,16 @@ function startClock() {
         }
     }, 1000)
 }
-//Do a quiz
+//Function to display next question
 function quizCards() {
-    shuffle(qList)
-    
+    //If this is the first question, shuffle question array
+    if (qNum == 0) {
+        shuffle(qList)
+    }
+    //Display question
+
+    //Increment question number
+    qNum++
 }
 
 //Ask for initials
@@ -51,32 +64,23 @@ function gameOver() {
 }
 //Report high score to storage
 function addScore() {
-    let scoreList = JSON.parse(localStorage.getItem(scoreBank))
-    if (scoreList != "") {
-        let newScore = {
-            score: nScore,
-            name: inputName.value
-        };
-        scoreList.push(newScore)
-        scoreList = JSON.stringify(scoreList)
-        localStorage.setItem("scoreBank", scoreList)
+    event.preventDefault()
+    if (localStorage.getItem('scoreBank') === null) {
+        localStorage.setItem('scoreBank', '{}');
+        var scoreList = []
     } else {
-        scoreList = {
-            score: nScore,
-            name: inputName.value
-        }
-        scoreList = JSON.stringify(scoreList)
-        localStorage.setItem("scoreBank", scoreList)
+        var scoreList = JSON.parse(localStorage.getItem(scoreBank))
     }
+    let newScore = {
+        score: nScore,
+        name: inputName.value
+    };
+    scoreList.push(newScore)
+    scoreList = JSON.stringify(scoreList)
+    localStorage.setItem("scoreBank", scoreList)
     //Kick to scoreboard page
     location.replace("scoreboard.html")
 }
-
-
-//Listeners
-stBtn.addEventListener("click", startQuiz);
-scoreSend.addEventListener("click", addScore);
-
 //Question Array!
 const qList = [{
         question: "Okay but does it work tho",
@@ -115,7 +119,7 @@ function shuffle(array) {
         temporaryValue = array[currentIndex];
         array[currentIndex] = array[randomIndex];
         array[randomIndex] = temporaryValue;
-        }
+    }
 
     return array;
-    }
+}
