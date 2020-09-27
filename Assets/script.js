@@ -161,23 +161,143 @@ function addScore() {
 }
 //Question Array!
 var qList = [{
-        question: "Okay but does it work tho",
+        question: "What does JS stand for?",
         answers: {
-            a: "Yes",
-            b: "No",
-            c: "No",
-            d: "No"
+            a: "JamSpace",
+            b: "JustScraps",
+            c: "JavaScript",
+            d: "JazzSinger"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "What command exits a loop?",
+        answers: {
+            a: "Stop",
+            b: "Return",
+            c: "Break",
+            d: "Exit"
+        },
+        correctAnswer: "c"
+    },
+    {
+        question: "Which set of characters creates an array?",
+        answers: {
+            a: "[ ]",
+            b: "{ }",
+            c: "< >",
+            d: "( )"
         },
         correctAnswer: "a"
     },
     {
-        question: "How bout now",
+        question: "Which set of characters creates an object?",
         answers: {
-            a: "No",
-            b: "No",
-            c: "Yes",
-            d: "No"
+            a: "[ ]",
+            b: "{ }",
+            c: "< >",
+            d: "( )"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Which is the logical operator symbol for OR?",
+        answers: {
+            a: "\\\\",
+            b: "||",
+            c: "//",
+            d: "++"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Which is the logical operator symbol for AND?",
+        answers: {
+            a: "&",
+            b: "&&",
+            c: "++",
+            d: "+"
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Which is the logical operator for EQUAL TO?",
+        answers: {
+            a: '=',
+            b: '!=',
+            c: '!==',
+            d: '=='
+        },
+        correctAnswer: "d"
+    },
+    {
+        question: "Which is the logical operator for NOT EQUAL TO?",
+        answers: {
+            a: '=',
+            b: '!=',
+            c: '!==',
+            d: '=='
+        },
+        correctAnswer: "b"
+    },
+    {
+        question: "Which is a commonly used JS code library?",
+        answers: {
+            a: "jQuest",
+            b: "jQueen",
+            c: "jQuery",
+            d: "jQuinta"
         },
         correctAnswer: "c"
+    },
+    {
+        question: "How should an IF statement start?",
+        answers: {
+            a: "if x=y {",
+            b: "if x=y, then",
+            c: "if (x=y) then {",
+            d: "if(x=y) {"
+        },
+        correctAnswer: "d"
+    },
+    {
+        question: "How do you insert a comment?",
+        answers: {
+            a: "/! comment",
+            b: "!--comment",
+            c: "'comment",
+            d: "//comment"
+        },
+        correctAnswer: "d"
+    },
+    {
+        question: "Which operator assigns a value to a variable?",
+        answers: {
+            a: "=",
+            b: "=>",
+            c: "==",
+            d: "==="
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "Which of these connect an HTML page to script.js?",
+        answers: {
+            a: '<script src="script.js">',
+            b: '<script name="script.js">',
+            c: '<script href="script.js">',
+            d: 'script("script.js")'
+        },
+        correctAnswer: "a"
+    },
+    {
+        question: "Which code will ask the user for their name?",
+        answers: {
+            a: 'alert("What is your name?")',
+            b: 'input("What is your name?")',
+            c: 'msg("What is your name?")',
+            d: 'prompt("What is your name?")'
+        },
+        correctAnswer: "d"
     },
 ]
