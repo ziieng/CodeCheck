@@ -42,13 +42,11 @@ function startQuiz() {
 
 //Function to start timer, holds interval for countdown
 function startClock() {
-    let tPercent = 100
     let countdown = setInterval(function () {
         time--
         timeText.innerHTML = time
-        tPercent = time / 75 * 100
         timeBar.setAttribute("aria-valuenow", time)
-        timeBar.style = "width:" + tPercent + "%"
+        timeBar.style = "width:" + time / 75 * 100 + "%"
         if (time <= 0) {
             clearInterval(countdown)
             timeText.innerHTML = "0"
@@ -109,6 +107,8 @@ function parseAnswer(element) {
         time -= 6
         resArea.classList.remove("invisible")
         resText.textContent = "Wrong!"
+        timeBar.setAttribute("aria-valuenow", time)
+        timeBar.style = "width:" + time / 75 * 100 + "%"
         fadeHandler()
     }
     qChoices.innerHTML = ""
